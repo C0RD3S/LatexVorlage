@@ -1,0 +1,60 @@
+\documentclass[
+12pt,						% Schriftgröße
+DIV=10,
+ngerman,					% für Umlaute, Silbentrennung etc.
+paper=a4,					% Papierformat
+oneside,
+parskip=half,				% Abstand zwischen Absätzen (halbe Zeile)
+headings=normal,			% Größe der Überschriften verkleinern
+listof=totoc,				% Verzeichnisse im Inhaltsverzeichnis aufführen
+bibliography=totocnumbered,	% Literaturverzeichnis im Inhaltsverzeichnis aufführen
+numbers=noenddot,			% Kapitelnummern ohne Punkt		
+]{scrreprt}
+
+
+
+\usepackage[utf8]{inputenc}
+\input{Style/_Meta}
+\input{Style/Packages}
+\input{Style/Seitenstil}
+\addbibresource{bibliothek.bib}
+
+
+\begin{document}
+	
+\setcounter{tocdepth}{2} % Tiefe des Inhaltsverzeichnisses definiert
+\pagenumbering{gobble}
+\input{Style/00_Deckblatt}
+\clearpage
+\pagenumbering{Roman}
+%\input{kapitel/01_Vorwort.tex}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+\pagenumbering{arabic}
+
+
+% Einbinden der content Datein
+
+\input{Kapitel/02_Einleitung.tex}
+\input{Kapitel/03_StandDerTechnik.tex}
+\input{Kapitel/04_TheoretischeGrundlagen.tex}
+\input{Kapitel/05_1_Akkuzellen.tex}
+\input{Kapitel/05_2_AllgemeinerAufbau.tex}
+\input{Kapitel/05_3_PreUndDischargeCircuit.tex}
+\input{Kapitel/05_4_ShutdownCircuit.tex}
+\input{Kapitel/05_5_BmsMainboard.tex}
+\input{Kapitel/05_6_Tsal.tex}
+\input{Kapitel/05_7_Bms.tex}
+\input{Kapitel/05_8_Software.tex}
+\input{Kapitel/06_Zusammenfassung.tex}
+\input{Kapitel/07_Ausblick.tex}
+
+\input{Kapitel/08_Literatur.tex}
+\input{Kapitel/09_Anhang.tex}
+\input{Kapitel/00_Abkürzungen.tex}
+
+
+\end{document}          

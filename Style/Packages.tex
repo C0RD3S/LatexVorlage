@@ -1,0 +1,189 @@
+% ------------------------------------------------------------------------
+% Anpassung des Seitenlayouts  siehe Seitenstil.tex
+% --------------------------------------------------------------------------
+
+\usepackage[headsepline,automark]{scrlayer-scrpage}
+
+\usepackage{listingsutf8}
+\lstset{language=SQL, 
+	commentstyle=\color{green}, backgroundcolor=\color{white}, 
+	keywordstyle=\color{blue},
+	basicstyle = \ttfamily \color{black} \footnotesize, 
+	numbers=left, 
+	stepnumber=1, 
+	numbersep=10pt, 
+	tabsize=4, 
+	captionpos=b,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\renewcommand{\lstlistingname}{Code} % Damit Codebeispiele mit Code betitelt werden.
+
+
+% ------------------------------------------------------------------------
+% Anpassung an Landessprache 
+% Verwendet globale Option german siehe \documentclass
+% ------------------------------------------------------------------------
+
+\usepackage[ngerman]{babel}
+\usepackage{pifont}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,units, gensymb}
+\usepackage{eurosym} 
+\usepackage{wrapfig,caption, placeins}
+\captionsetup{
+	format = plain,
+	justification = centering,
+	labelsep = newline,
+	singlelinecheck = false,
+	labelfont = bf,
+	font = small
+}
+\usepackage{mathptmx,charter,helvet,courier}
+\usepackage[printonlyused, smaller, nolist]{acronym} %Entferne nolist aus den Argumenten, damit ein Verzeichnis der Abkürzungen erstellt wird. 
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{tablefootnote}
+
+% -------------------------------------------------------------------------
+% Umlaute
+% Umlaute/Sonderzeichen wie äöüß direkt im Quelltext verwenden (CodePage).
+% Erlaubt automatische Trennung von Worten mit Umlauten.
+% -------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}			 	% "schöneres" ä
+\usepackage{textcomp} 		% Euro-Zeichen etc.
+\usepackage[german=quotes]{csquotes}
+
+% -------------------------------------------------------------------------
+% Verwendung von Blindtext zur Layout gestaltung
+% -------------------------------------------------------------------------
+\usepackage{blindtext}
+
+%Zur Verwendung von BibLaTex
+\usepackage[backend=biber, 
+            style=numeric,
+            sorting=nty,
+            abbreviate = true,
+            pagetracker = true]{biblatex}
+
+
+% -------------------------------------------------------------------------
+% Grafiken 
+% Einbinden von Grafiken [draft oder final]
+% Option [draft] bindet Bilder nicht ein - auch globale Option
+% -------------------------------------------------------------------------
+\usepackage[final]{graphicx}
+\graphicspath{{Grafiken/}} 	% Dort liegen die Bilder des Dokuments
+
+% Befehle aus AMSTeX für mathematische Symbole z.B. \boldsymbol \mathbb ----
+\usepackage{amsmath,amsfonts}
+
+% Für Index-Ausgabe; \printindex -------------------------------------------
+\usepackage{makeidx}
+
+% Einfache Definition der Zeilenabstände und Seitenränder etc. -------------
+\usepackage{setspace}
+\usepackage{geometry}
+
+
+%% Zum Umfließen von Bildern -------------------------------------------------
+\usepackage{floatflt}
+
+
+% Lange URLs umbrechen etc. -------------------------------------------------
+\usepackage{url}
+
+% für lange Tabellen
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{lscape}
+\usepackage{colortbl} %farbige hinterlegung
+%\usepackage{enumitem}
+
+% Spaltendefinition mit definierter Breite ---------------------
+\newcolumntype{L}[1]{>{\raggedright\hspace{0pt}}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+\newcolumntype{w}[1]{>{\raggedleft\hspace{0pt}}p{#1}}
+
+
+% Formatierung von Listen ändern
+\usepackage{paralist}
+% Standardeinstellungen:
+\setdefaultleftmargin{2.5em}{2.2em}{1.87em}{1.7em}{1em}{1em}
+
+
+% Zur Richtigen Verwendung von Einheiten
+\usepackage[locale=DE]{siunitx}
+
+\sisetup{
+	mode = text,
+	detect-family,			%Formatierungserkennung der Umgebung
+	detect-weight,			%Formatierungserkennung der Umgebung  
+	exponent-product = \cdot,
+	product-units = single,
+	number-unit-separator={~},
+	output-decimal-marker={\text{,}},
+    separate-uncertainty, 			%Angabe bei Fehlern(5 +- 3)
+	%math-rm=\mathsf,
+	%text-rm=\sffamily,
+	range-phrase = { - }			%Bei Áusgabe eines Bereichs 5-7V
+}
+\DeclareSIUnit{\var}{var}
+\DeclareSIUnit{\mio}{Mio.\,}
+%--Mögliche Befehle für siunitx----------------------------------------------
+%\num[Optionen]{Zahl}  
+%\si[Optionen]{Einheit}  
+%\SI[Optionen]{Zahl}[per-Einheit]{Einheit}  
+%\numlist[Optionen]{Zahl;Zahl;Zahl}  
+%\numrage[Optionen]{Zahl Anfang}{Zahl Ende}  
+%\SIlist[Optionen]{Zahlen}{Einheit}  
+%\SIrange[Optionen]]{Zahl Anfang}{Zahl Ende}{Einheit}  
+%\tablenum[Optionen]{Zahl}  
+%\ang[Optionen]{Winkel} 
+% Option sollte nicht genutzt werden!
+%-----------------------------------------------------------------------------
+
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{pdfpages}
+
+% pdf-Optionen  --------------------------------------------------------------
+\usepackage[
+bookmarks,
+bookmarksopen=true,
+pdftitle={\titel},
+pdfauthor={\autorC},
+pdfcreator={\autorC},
+pdfsubject={\titel},
+pdfkeywords={\titel},
+colorlinks=true,
+%linkcolor=red, % einfache interne Verknüpfungen
+%anchorcolor=black,% Ankertext
+%citecolor=blue, % Verweise auf Literaturverzeichniseinträge im Text
+%filecolor=magenta, % Verkn�pfungen, die lokale Dateien �ffnen
+%menucolor=red, % Acrobat-Men�punkte
+%urlcolor=cyan, 
+% f�r die Druckversion k�nnen die Farben ausgeschaltet werden:
+linkcolor=black, % einfache interne Verkn�pfungen
+anchorcolor=black,% Ankertext
+citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
+filecolor=black, % Verkn�pfungen, die lokale Dateien �ffnen
+menucolor=black, % Acrobat-Men�punkte
+urlcolor=black, 
+%backref,
+%pagebackref,
+plainpages=false,% zur korrekten Erstellung der Bookmarks
+pdfpagelabels,% zur korrekten Erstellung der Bookmarks
+hypertexnames=false,% zur korrekten Erstellung der Bookmarks
+linktoc=all%Sowohl Seitenzahl als auch Text als Link
+]{hyperref}
